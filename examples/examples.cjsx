@@ -12,10 +12,8 @@ data = for i in [0..5]
   {
     apple: faker.lorem.words(1)
     peach: faker.lorem.words(1)
-    data: for i in [0..7]
-      faker.helpers.randomNumber(200)
+    data: [0, 1, 2, 3, 4, 5, 6]
   }
-
 module.exports = React.createClass
   render: ->
     <div style={width:'500px', margin:'0 auto'}>
@@ -74,6 +72,7 @@ module.exports = React.createClass
         width=200
         height=50
         tooltip
+        data=[0,2,3,4,5]
         tipOffset={[0,20]}
         tipTemplate={(d, i, data) -> "value of #{d} at index #{i}, with #{data.length} data points"}
         hoverColor="rgb(161,130,214)"
@@ -96,6 +95,7 @@ module.exports = React.createClass
       <MicroBarChart
         width=200
         height=50
+        tooltip
         xAxis
         hoverColor="pink"
         fillColor="steelblue" />
